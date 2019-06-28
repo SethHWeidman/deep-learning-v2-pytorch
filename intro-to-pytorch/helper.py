@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import torch
 from torch import nn, optim
 from torch.autograd import Variable
 
@@ -92,3 +93,12 @@ def view_classify(img, ps, version="MNIST"):
     ax2.set_xlim(0, 1.1)
 
     plt.tight_layout()
+
+def sigmoid(x):
+    """ Sigmoid activation function 
+    
+        Arguments
+        ---------
+        x: torch.Tensor
+    """
+    return 1/(1+torch.exp(-x))
